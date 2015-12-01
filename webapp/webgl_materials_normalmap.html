@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - materials - normal map [Lee Perry-Smith]</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				background:#000;
+				color:#fff;
+				padding:0;
+				margin:0;
+				font-weight: bold;
+				overflow:hidden;
+			}
+
+			a {
+				color: #ffffff;
+			}
+
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				color: #ffffff;
+				padding: 5px;
+				font-family:Monospace;
+				font-size:13px;
+				text-align:center;
+				z-index:1000;
+			}
+
+			#oldie {
+				background:rgb(200,100,0) !important;
+				color:#fff;
+			}
+
+			#vt { display:none }
+			#vt, #vt a { color:orange; }
+			.code { }
+
+		</style>
+	</head>
+
+	<body>
+		<div id="info">
+			<a href="http://threejs.org" target="_blank">three.js</a> - webgl normalmap demo.
+			<a href="http://graphics.cs.williams.edu/data/meshes.xml#14" target="_blank">Lee Perry-Smith</a> head.
+
+			<div id="vt">displacement mapping needs vertex textures (GPU with Shader Model 3.0)<br/>
+			on Windows use <span class="code">Chrome --use-gl=desktop</span> or Firefox 4<br/>
+			please star this <a href="http://code.google.com/p/chromium/issues/detail?id=52497">Chrome issue</a> to get ANGLE support
+			</div>
+		</div>
+
+		<script src="libs/three.min.js"></script>
+
+		<script src="libs/Detector.js"></script>
+		<script src="libs/stats.min.js"></script>
+
+		<script src="libs/shaders/BleachBypassShader.js"></script>
+		<script src="libs/shaders/ColorCorrectionShader.js"></script>
+		<script src="libs/shaders/CopyShader.js"></script>
+		<script src="libs/shaders/FXAAShader.js"></script>
+
+		<script src="libs/postprocessing/EffectComposer.js"></script>
+		<script src="libs/postprocessing/RenderPass.js"></script>
+		<script src="libs/postprocessing/ShaderPass.js"></script>
+		<script src="libs/postprocessing/MaskPass.js"></script>
+
+		<script src="../target/js/org/jsweet/examples/threejs/WebglMaterialsNormalMap.js"></script>
+
+	</body>
+</html>
