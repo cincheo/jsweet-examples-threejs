@@ -33,6 +33,7 @@ import def.threejs.three.WebGLRendererParameters;
 import jsweet.dom.Event;
 import jsweet.dom.HTMLElement;
 import jsweet.dom.MouseEvent;
+import jsweet.dom.TouchEvent;
 import jsweet.util.StringTypes;
 
 public class WebglMaterialsNormalMap {
@@ -171,6 +172,7 @@ public class WebglMaterialsNormalMap {
 		// EVENTS
 
 		document.addEventListener(StringTypes.mousemove, WebglMaterialsNormalMap::onDocumentMouseMove, false);
+		document.addEventListener(StringTypes.touchmove, WebglMaterialsNormalMap::onDocumentTouchMove, false);
 		window.addEventListener("resize", WebglMaterialsNormalMap::onWindowResize, false);
 
 	}
@@ -213,6 +215,15 @@ public class WebglMaterialsNormalMap {
 		return null;
 	}
 
+	public static Object onDocumentTouchMove(TouchEvent event) {
+
+		mouseX = (event.touches.$get(0).clientX - windowHalfX) * 10;
+		mouseY = (event.touches.$get(0).clientY - windowHalfY) * 10;
+
+		return null;
+	}
+	
+	
 	//
 
 	public static void animate(double time) {
@@ -242,26 +253,3 @@ public class WebglMaterialsNormalMap {
 	}
 
 }
-
-//class Globals {
-//
-//	@Ambient
-//	public static Shader BleachBypassShader;
-//
-//	@Ambient
-//	public static Shader ColorCorrectionShader;
-//
-//	@Ambient
-//	public static Shader FXAAShader;
-//
-//}
-
-// @Ambient
-// interface UniformsHolder {
-// public ValueHolder $get();
-// }
-//
-// @Ambient
-// class ValueHolder {
-// public Euler value;
-// }
