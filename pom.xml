@@ -115,6 +115,11 @@
 	</build>
 	<dependencies>
 		<dependency>
+			<groupId>org.jsweet</groupId>
+			<artifactId>jsweet-core-strict</artifactId>
+			<version>1.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>org.jsweet.candies</groupId>
 			<artifactId>threejs--three</artifactId>
 			<version>0.0.2-SNAPSHOT</version>

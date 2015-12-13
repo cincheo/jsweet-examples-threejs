@@ -1,15 +1,13 @@
 package org.jsweet.examples.threejs;
 
+import static ambient.three.Globals.BleachBypassShader;
+import static ambient.three.Globals.ColorCorrectionShader;
+import static ambient.three.Globals.FXAAShader;
 import static def.threejs.Globals.Detector;
 import static jsweet.dom.Globals.document;
 import static jsweet.dom.Globals.requestAnimationFrame;
 import static jsweet.dom.Globals.window;
-import static jsweet.util.Globals.$get;
-import static jsweet.util.Globals.$set;
 
-import static ambient.three.Globals.BleachBypassShader;
-import static ambient.three.Globals.ColorCorrectionShader;
-import static ambient.three.Globals.FXAAShader;
 import def.stats.Stats;
 import def.threejs.three.AmbientLight;
 import def.threejs.three.DirectionalLight;
@@ -67,7 +65,8 @@ public class WebglMaterialsNormalMap {
 	static EffectComposer composer;
 
 	public static void main(String[] args) {
-		if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+		if (!Detector.webgl)
+			Detector.addGetWebGLMessage();
 
 		init();
 		animate(0);
@@ -151,13 +150,13 @@ public class WebglMaterialsNormalMap {
 		ShaderPass effectColor = new ShaderPass(ColorCorrectionShader);
 		effectFXAA = new ShaderPass(FXAAShader);
 
-		((Euler) $get($get($get(effectFXAA, "uniforms"), "resolution"), "value")).set(1 / window.innerWidth,
+		((Euler) effectFXAA.$get("uniforms").$get("resolution").$get("value")).set(1 / window.innerWidth,
 				1 / window.innerHeight, 0);
 
-		$set($get($get(effectBleach, "uniforms"), "opacity"), "value", 0.4);
+		effectBleach.$get("uniforms").$get("opacity").$set("value", 0.4);
 
-		((Euler) $get($get($get(effectColor, "uniforms"), "powRGB"), "value")).set(1.4, 1.45, 1.45);
-		((Euler) $get($get($get(effectColor, "uniforms"), "mulRGB"), "value")).set(1.1, 1.1, 1.1);
+		((Euler) effectColor.$get("uniforms").$get("powRGB").$get("value")).set(1.4, 1.45, 1.45);
+		((Euler) effectColor.$get("uniforms").$get("mulRGB").$get("value")).set(1.1, 1.1, 1.1);
 
 		effectFXAA.renderToScreen = true;
 
@@ -202,8 +201,8 @@ public class WebglMaterialsNormalMap {
 
 		composer.reset();
 
-		((Euler) $get($get($get(effectFXAA, "uniforms"), "resolution"), "value")).set(1 / SCREEN_WIDTH,
-				1 / SCREEN_HEIGHT, 0);
+		((Euler) effectFXAA.$get("uniforms").$get("resolution").$get("value")).set(1 / SCREEN_WIDTH, 1 / SCREEN_HEIGHT,
+				0);
 
 	}
 
@@ -222,8 +221,7 @@ public class WebglMaterialsNormalMap {
 
 		return null;
 	}
-	
-	
+
 	//
 
 	public static void animate(double time) {
