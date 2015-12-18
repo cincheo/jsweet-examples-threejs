@@ -59,7 +59,7 @@
 								<property name="compile_classpath" refid="maven.compile.classpath" />
 								<java classname="org.jsweet.JSweetCommandLineLauncher"
 									fork="true" failonerror="true">
-									<arg value="--debug" />
+									<arg value="--sourceMap" />
 									<!-- input dir -->
 									<arg value="-i" />
 									<arg value="src/main/java" />
