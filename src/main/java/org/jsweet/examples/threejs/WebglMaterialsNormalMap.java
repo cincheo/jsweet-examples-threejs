@@ -7,6 +7,7 @@ import static def.threejs.Globals.Detector;
 import static jsweet.dom.Globals.document;
 import static jsweet.dom.Globals.requestAnimationFrame;
 import static jsweet.dom.Globals.window;
+import static jsweet.util.Globals.union;
 
 import def.stats.Stats;
 import def.threejs.three.AmbientLight;
@@ -98,7 +99,7 @@ public class WebglMaterialsNormalMap {
 
 		Material material = new MeshPhongMaterial(new MeshPhongMaterialParameters() {
 			{
-				color = 0xdddddd;
+				color = union(0xdddddd);
 				specular = 0x222222;
 				shininess = 35;
 				map = ImageUtils.loadTexture("obj/leeperrysmith/Map-COL.jpg");

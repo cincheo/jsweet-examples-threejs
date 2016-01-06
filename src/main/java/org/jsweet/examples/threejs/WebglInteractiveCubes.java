@@ -3,6 +3,7 @@ package org.jsweet.examples.threejs;
 import static jsweet.dom.Globals.document;
 import static jsweet.dom.Globals.requestAnimationFrame;
 import static jsweet.dom.Globals.window;
+import static jsweet.util.Globals.union;
 
 import def.stats.Stats;
 import def.threejs.three.BoxGeometry;
@@ -72,7 +73,7 @@ public class WebglInteractiveCubes {
 
 			Mesh object = new Mesh(geometry, new MeshLambertMaterial(new MeshLambertMaterialParameters() {
 				{
-					color = Math.random() * 0xffffff;
+					color = union(Math.random() * 0xffffff);
 				}
 			}));
 
