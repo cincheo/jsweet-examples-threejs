@@ -26,6 +26,9 @@ import jsweet.dom.MouseEvent;
 import jsweet.util.StringTypes;
 import jsweet.lang.Math;
 
+// WARNING: this example compiles with JSweet in strict mode
+// jsweet-core-strict must be place first (before the JDK) in the classpath
+
 public class WebglInteractiveCubes {
 
 	static HTMLElement container;

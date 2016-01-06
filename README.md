@@ -22,3 +22,8 @@ Check out more [JSweet examples](https://github.com/cincheo/jsweet).
 
 The `node` and `npm` executables must be in the path (https://nodejs.org).
 Install Maven (https://maven.apache.org/install.html).
+
+## Note on strict mode
+
+These examples compile with JSweet in strict mode: `jsweet-core-strict` must be placed first (before the JDK) in the classpath.
+In strict mode, JavaScript APIs replace Java APIs even on java.lang objects. In strict mode, it is not possible to compile regular Java code (using regular Java APIs) at all. 

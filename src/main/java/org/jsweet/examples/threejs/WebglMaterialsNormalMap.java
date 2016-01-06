@@ -35,6 +35,9 @@ import jsweet.dom.MouseEvent;
 import jsweet.dom.TouchEvent;
 import jsweet.util.StringTypes;
 
+// WARNING: this example compiles with JSweet in strict mode
+// jsweet-core-strict must be place first (before the JDK) in the classpath
+
 public class WebglMaterialsNormalMap {
 
 	static double SCREEN_WIDTH, SCREEN_HEIGHT;
