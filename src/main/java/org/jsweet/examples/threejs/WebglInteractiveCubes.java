@@ -7,6 +7,7 @@ import static jsweet.util.Globals.union;
 
 import def.stats.Stats;
 import def.threejs.three.BoxGeometry;
+import def.threejs.three.Color;
 import def.threejs.three.DirectionalLight;
 import def.threejs.three.Geometry;
 import def.threejs.three.Intersection;
@@ -23,8 +24,8 @@ import def.threejs.three.WebGLRenderer;
 import jsweet.dom.Event;
 import jsweet.dom.HTMLElement;
 import jsweet.dom.MouseEvent;
-import jsweet.util.StringTypes;
 import jsweet.lang.Math;
+import jsweet.util.StringTypes;
 
 // WARNING: this example compiles with JSweet in strict mode
 // jsweet-core-strict must be place first (before the JDK) in the classpath
@@ -40,7 +41,7 @@ public class WebglInteractiveCubes {
 
 	static Vector2 mouse = new Vector2();
 	static Mesh INTERSECTED;
-	
+
 	static double radius = 100;
 	static double theta = 0;
 
@@ -175,21 +176,24 @@ public class WebglInteractiveCubes {
 
 			if (INTERSECTED != intersects[0].object) {
 
-				if (INTERSECTED != null)
-					((MeshLambertMaterial) INTERSECTED.material).emissive
+				// This part is horrible partially because there is a mistake in the definition file (emissive is a color)
+				if (INTERSECTED != null) {
+					((Color) (Object) ((MeshLambertMaterial) INTERSECTED.material).emissive)
 							.setHex((double) INTERSECTED.$get("currentHex"));
-
+				}
 				INTERSECTED = (Mesh) intersects[0].object;
-				INTERSECTED.$set("currentHex", ((MeshLambertMaterial) INTERSECTED.material).emissive.getHex());
-				((MeshLambertMaterial) INTERSECTED.material).emissive.setHex(0xff0000);
+				INTERSECTED.$set("currentHex",
+						((Color) (Object) ((MeshLambertMaterial) INTERSECTED.material).emissive).getHex());
+				((Color) (Object) ((MeshLambertMaterial) INTERSECTED.material).emissive).setHex(0xff0000);
 
 			}
 
 		} else {
 
-			if (INTERSECTED != null)
-				((MeshLambertMaterial) INTERSECTED.material).emissive.setHex((double) INTERSECTED.$get("currentHex"));
-
+			if (INTERSECTED != null) {
+				((Color) (Object) ((MeshLambertMaterial) INTERSECTED.material).emissive)
+						.setHex((double) INTERSECTED.$get("currentHex"));
+			}
 			INTERSECTED = null;
 
 		}
