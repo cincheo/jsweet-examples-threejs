@@ -7,6 +7,8 @@ import static def.threejs.Globals.Detector;
 import static jsweet.dom.Globals.document;
 import static jsweet.dom.Globals.requestAnimationFrame;
 import static jsweet.dom.Globals.window;
+import static jsweet.util.Globals.$get;
+import static jsweet.util.Globals.$set;
 import static jsweet.util.Globals.union;
 
 import def.stats.Stats;
@@ -154,13 +156,13 @@ public class WebglMaterialsNormalMap {
 		ShaderPass effectColor = new ShaderPass(ColorCorrectionShader);
 		effectFXAA = new ShaderPass(FXAAShader);
 
-		((Euler) effectFXAA.$get("uniforms").$get("resolution").$get("value")).set(1 / window.innerWidth,
+		((Euler) $get($get(effectFXAA.$get("uniforms"), "resolution"), "value")).set(1 / window.innerWidth,
 				1 / window.innerHeight, 0);
 
-		effectBleach.$get("uniforms").$get("opacity").$set("value", 0.4);
+		$set($get(effectBleach.$get("uniforms"), "opacity"), "value", 0.4);
 
-		((Euler) effectColor.$get("uniforms").$get("powRGB").$get("value")).set(1.4, 1.45, 1.45);
-		((Euler) effectColor.$get("uniforms").$get("mulRGB").$get("value")).set(1.1, 1.1, 1.1);
+		((Euler) $get($get(effectColor.$get("uniforms"), "powRGB"), "value")).set(1.4, 1.45, 1.45);
+		((Euler) $get($get(effectColor.$get("uniforms"), "mulRGB"), "value")).set(1.1, 1.1, 1.1);
 
 		effectFXAA.renderToScreen = true;
 
@@ -205,8 +207,8 @@ public class WebglMaterialsNormalMap {
 
 		composer.reset();
 
-		((Euler) effectFXAA.$get("uniforms").$get("resolution").$get("value")).set(1 / SCREEN_WIDTH, 1 / SCREEN_HEIGHT,
-				0);
+		((Euler) $get($get(effectFXAA.$get("uniforms"), "resolution"), "value")).set(1 / SCREEN_WIDTH,
+				1 / SCREEN_HEIGHT, 0);
 
 	}
 
