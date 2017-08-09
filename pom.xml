@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.jsweet</groupId>
 	<artifactId>jsweet-examples-threejs</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
-	<name>JSweet examples</name>
-	<description>A set of examples to illustrate JSweet</description>
+	<version>2.0.0-SNAPSHOT</version>
+	<name>JSweet ThreeJS example</name>
+	<description>A ThreeJS examples to illustrate JSweet</description>
 	<developers>
 		<developer>
 			<id>rpawlak</id>
@@ -118,44 +118,24 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>org.jsweet.candies</groupId>
+			<groupId>org.jsweet</groupId>
 			<artifactId>jsweet-core</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>5-20170726</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jsweet.candies</groupId>
-			<artifactId>threejs--three</artifactId>
-			<version>0.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jsweet.candies</groupId>
-			<artifactId>threejs--three-renderpass</artifactId>
-			<version>0.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jsweet.candies</groupId>
-			<artifactId>threejs--three-shaderpass</artifactId>
-			<version>0.0.0-SNAPSHOT</version>
+			<artifactId>threejs</artifactId>
+			<version>75-20170726</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jsweet.candies</groupId>
 			<artifactId>stats</artifactId>
-			<version>0.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jsweet.candies</groupId>
-			<artifactId>threejs--three-effectcomposer</artifactId>
-			<version>0.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jsweet.candies</groupId>
-			<artifactId>threejs--detector</artifactId>
-			<version>0.0.0-SNAPSHOT</version>
+			<version>0.17.0-20170726</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jsweet</groupId>
 			<artifactId>jsweet-transpiler</artifactId>
-			<version>1.0.0</version>
+			<version>2.0.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>

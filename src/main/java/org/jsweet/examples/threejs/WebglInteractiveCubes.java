@@ -1,9 +1,9 @@
 package org.jsweet.examples.threejs;
 
-import static jsweet.dom.Globals.document;
-import static jsweet.dom.Globals.requestAnimationFrame;
-import static jsweet.dom.Globals.window;
-import static jsweet.util.Globals.union;
+import static def.dom.Globals.document;
+import static def.dom.Globals.requestAnimationFrame;
+import static def.dom.Globals.window;
+import static jsweet.util.Lang.union;
 
 import def.stats.Stats;
 import def.threejs.three.BoxGeometry;
@@ -21,10 +21,10 @@ import def.threejs.three.Raycaster.Coords;
 import def.threejs.three.Scene;
 import def.threejs.three.Vector2;
 import def.threejs.three.WebGLRenderer;
-import jsweet.dom.Event;
-import jsweet.dom.HTMLElement;
-import jsweet.dom.MouseEvent;
-import jsweet.lang.Math;
+import def.dom.Event;
+import def.dom.HTMLElement;
+import def.dom.MouseEvent;
+import def.js.Math;
 import jsweet.util.StringTypes;
 
 // WARNING: this example compiles with JSweet in strict mode

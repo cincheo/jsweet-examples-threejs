@@ -1,3 +1,3 @@
 
 @jsweet.lang.Name("THREE")
-package ambient.three;
+package def.threejs_ext.three;

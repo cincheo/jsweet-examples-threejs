@@ -1,16 +1,19 @@
 package org.jsweet.examples.threejs;
 
-import static ambient.three.Globals.BleachBypassShader;
-import static ambient.three.Globals.ColorCorrectionShader;
-import static ambient.three.Globals.FXAAShader;
+import static def.dom.Globals.document;
+import static def.dom.Globals.requestAnimationFrame;
+import static def.dom.Globals.window;
+import static jsweet.util.Lang.object;
+import static jsweet.util.Lang.union;
 import static def.threejs.Globals.Detector;
-import static jsweet.dom.Globals.document;
-import static jsweet.dom.Globals.requestAnimationFrame;
-import static jsweet.dom.Globals.window;
-import static jsweet.util.Globals.$get;
-import static jsweet.util.Globals.$set;
-import static jsweet.util.Globals.union;
+import static def.threejs_ext.three.Globals.BleachBypassShader;
+import static def.threejs_ext.three.Globals.ColorCorrectionShader;
+import static def.threejs_ext.three.Globals.FXAAShader;
 
+import def.dom.Event;
+import def.dom.HTMLElement;
+import def.dom.MouseEvent;
+import def.dom.TouchEvent;
 import def.stats.Stats;
 import def.threejs.three.AmbientLight;
 import def.threejs.three.DirectionalLight;
@@ -31,10 +34,6 @@ import def.threejs.three.ShaderPass;
 import def.threejs.three.Vector2;
 import def.threejs.three.WebGLRenderer;
 import def.threejs.three.WebGLRendererParameters;
-import jsweet.dom.Event;
-import jsweet.dom.HTMLElement;
-import jsweet.dom.MouseEvent;
-import jsweet.dom.TouchEvent;
 import jsweet.util.StringTypes;
 
 // WARNING: this example compiles with JSweet in strict mode
@@ -156,13 +155,13 @@ public class WebglMaterialsNormalMap {
 		ShaderPass effectColor = new ShaderPass(ColorCorrectionShader);
 		effectFXAA = new ShaderPass(FXAAShader);
 
-		((Euler) $get($get(effectFXAA.$get("uniforms"), "resolution"), "value")).set(1 / window.innerWidth,
-				1 / window.innerHeight, 0);
+		((Euler) object(object(effectFXAA.$get("uniforms")).$get("resolution")).$get("value"))
+				.set(1 / window.innerWidth, 1 / window.innerHeight, 0);
 
-		$set($get(effectBleach.$get("uniforms"), "opacity"), "value", 0.4);
+		object(object(effectBleach.$get("uniforms")).$get("opacity")).$set("value", 0.4);
 
-		((Euler) $get($get(effectColor.$get("uniforms"), "powRGB"), "value")).set(1.4, 1.45, 1.45);
-		((Euler) $get($get(effectColor.$get("uniforms"), "mulRGB"), "value")).set(1.1, 1.1, 1.1);
+		((Euler) object(object(effectColor.$get("uniforms")).$get("powRGB")).$get("value")).set(1.4, 1.45, 1.45);
+		((Euler) object(object(effectColor.$get("uniforms")).$get("mulRGB")).$get("value")).set(1.1, 1.1, 1.1);
 
 		effectFXAA.renderToScreen = true;
 
@@ -207,7 +206,7 @@ public class WebglMaterialsNormalMap {
 
 		composer.reset();
 
-		((Euler) $get($get(effectFXAA.$get("uniforms"), "resolution"), "value")).set(1 / SCREEN_WIDTH,
+		((Euler) object(object(effectFXAA.$get("uniforms")).$get("resolution")).$get("value")).set(1 / SCREEN_WIDTH,
 				1 / SCREEN_HEIGHT, 0);
 
 	}
