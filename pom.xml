@@ -125,12 +125,12 @@
 		<dependency>
 			<groupId>org.jsweet.candies</groupId>
 			<artifactId>threejs</artifactId>
-			<version>75-20170726</version>
+			<version>75-20171101</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jsweet.candies</groupId>
 			<artifactId>stats</artifactId>
-			<version>0.17.0-20170726</version>
+			<version>0.17.0-20171101</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jsweet</groupId>
