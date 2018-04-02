@@ -6,38 +6,35 @@ import static def.dom.Globals.window;
 import static jsweet.util.Lang.object;
 import static jsweet.util.Lang.union;
 import static def.threejs.Globals.Detector;
-import static def.threejs_ext.three.Globals.BleachBypassShader;
-import static def.threejs_ext.three.Globals.ColorCorrectionShader;
-import static def.threejs_ext.three.Globals.FXAAShader;
+import static def.threejs.THREE.Globals.BleachBypassShader;
+import static def.threejs.THREE.Globals.ColorCorrectionShader;
+import static def.threejs.THREE.Globals.FXAAShader;
 
 import def.dom.Event;
 import def.dom.HTMLElement;
 import def.dom.MouseEvent;
 import def.dom.TouchEvent;
 import def.stats.Stats;
-import def.threejs.three.AmbientLight;
-import def.threejs.three.DirectionalLight;
-import def.threejs.three.EffectComposer;
-import def.threejs.three.Euler;
-import def.threejs.three.Geometry;
-import def.threejs.three.ImageUtils;
-import def.threejs.three.JSONLoader;
-import def.threejs.three.Material;
-import def.threejs.three.Mesh;
-import def.threejs.three.MeshPhongMaterial;
-import def.threejs.three.MeshPhongMaterialParameters;
-import def.threejs.three.PerspectiveCamera;
-import def.threejs.three.PointLight;
-import def.threejs.three.RenderPass;
-import def.threejs.three.Scene;
-import def.threejs.three.ShaderPass;
-import def.threejs.three.Vector2;
-import def.threejs.three.WebGLRenderer;
-import def.threejs.three.WebGLRendererParameters;
+import def.threejs.THREE.AmbientLight;
+import def.threejs.THREE.DirectionalLight;
+import def.threejs.THREE.EffectComposer;
+import def.threejs.THREE.Euler;
+import def.threejs.THREE.Geometry;
+import def.threejs.THREE.ImageUtils;
+import def.threejs.THREE.JSONLoader;
+import def.threejs.THREE.Material;
+import def.threejs.THREE.Mesh;
+import def.threejs.THREE.MeshPhongMaterial;
+import def.threejs.THREE.MeshPhongMaterialParameters;
+import def.threejs.THREE.PerspectiveCamera;
+import def.threejs.THREE.PointLight;
+import def.threejs.THREE.RenderPass;
+import def.threejs.THREE.Scene;
+import def.threejs.THREE.ShaderPass;
+import def.threejs.THREE.Vector2;
+import def.threejs.THREE.WebGLRenderer;
+import def.threejs.THREE.WebGLRendererParameters;
 import jsweet.util.StringTypes;
-
-// WARNING: this example compiles with JSweet in strict mode
-// jsweet-core-strict must be place first (before the JDK) in the classpath
 
 public class WebglMaterialsNormalMap {
 
@@ -104,7 +101,7 @@ public class WebglMaterialsNormalMap {
 		Material material = new MeshPhongMaterial(new MeshPhongMaterialParameters() {
 			{
 				color = union(0xdddddd);
-				specular = 0x222222;
+				specular = union(0x222222);
 				shininess = 35;
 				map = ImageUtils.loadTexture("obj/leeperrysmith/Map-COL.jpg");
 				specularMap = ImageUtils.loadTexture("obj/leeperrysmith/Map-SPEC.jpg");
