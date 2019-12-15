@@ -1,4 +1,4 @@
-# JSweet Examples (threejs framework)
+# JSweet Examples (threejs framework) [![Build Status](https://travis-ci.com/lgrignon/jsweet-examples-threejs.svg?branch=master)](https://travis-ci.org/lgrignon/jsweet-examples-threejs)
 
 Some examples to demonstrate using the awesome http://threejs.org framework (WebGL powered 3D) from Java thanks to the [JSweet tranpiler](https://github.com/cincheo/jsweet).
 
